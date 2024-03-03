@@ -1,2 +1,46 @@
-
 // Demonstate and configure and launch an ec2 windows instance with VPC,  subnet, Internet Gateway, Security group 
+
+Sure, here are the detailed steps to configure and launch an EC2 Windows instance with VPC, subnet, Internet Gateway, and Security group, and then access it using RDP:
+
+Step 1: Delete Default VPC
+- Navigate to the AWS console.
+- Go to the VPC service.
+- Remove the default VPC.
+
+Step 2: Create Custom VPC
+- Access the VPC service.
+- Proceed to Your VPCs.
+- Create a new VPC named “MyVPC” with CIDR block 10.100.0.0/16.
+
+Step 3: Set up Internet Gateway
+- Create a new Internet gateway (MyVPC-IGW) in the Internet Gateways section.
+
+Step 4: Attach Internet Gateway to Custom VPC
+- Attach the created internet gateway to your “MyVPC.”
+
+Step 5: Create Subnet
+- In the VPC service, go to Subnets.
+- Create a new subnet within your VPC.
+
+Step 6: Create Security Group
+- In the VPC service, go to Security Groups.
+- Create a new security group within your VPC.
+- Set up rules to allow inbound and outbound traffic.
+
+Step 7: Launch EC2 Instance
+- Go to the EC2 service.
+- Click on Launch Instance.
+- Select the Windows AMI.
+- Choose the instance type.
+- Configure instance details, making sure to select your custom VPC and subnet.
+- Add storage as needed.
+- Select your security group.
+- Review and launch the instance².
+
+Step 8: Connect to EC2 Instance Using RDP
+- Install an RDP client on your local machine¹.
+- In the EC2 service, select your instance and click on Connect.
+- Download the remote desktop file.
+- Get the password by browsing your key pair and clicking on Decrypt Password¹.
+- Open the downloaded remote desktop file, enter the password, and press Continue¹.
+
