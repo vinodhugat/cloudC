@@ -1,41 +1,62 @@
-// Demonstate and configure and launch an ec2 linux instance with VPC,  subnet, Internet Gateway, Security group
+1.Demonstrate demonstrate end configure and launch an EC2 Linux instance with VPC subnet , internet gateway, security group 
 
-Sure, here's a more detailed guide on how to configure and launch an EC2 Linux instance with VPC, subnet, Internet Gateway, and Security Group using AWS Management Console:
+Certainly! Here are step-by-step instructions to configure and launch an EC2 Linux instance with VPC subnet, internet gateway, and security group:
 
-Step 1: Create a VPC
-1. Sign in to the AWS Management Console and open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
-2. In the navigation pane, choose 'Your VPCs', 'Create VPC'.
-3. In the 'Create VPC' dialog box, configure the VPC by adding a name and a CIDR block (for example, 10.0.0.0/16) for your VPC and choose 'Yes, Create'.
+1. Sign in to AWS Console:
+   - Go to the AWS Management Console at https://aws.amazon.com/console/.
+   - Sign in using your credentials.
 
-Step 2: Create a Subnet
-1. In the navigation pane, choose 'Subnets', 'Create subnet'.
-2. In the 'Create Subnet' dialog box, select the VPC you created, add a name, and a CIDR block (for example, 10.0.1.0/24).
-3. Choose 'Yes, Create'.
+2. Create a VPC:
+   - Navigate to the VPC dashboard.
+   - Click on "Create VPC" and follow the wizard.
+   - Provide a name and CIDR block for your VPC.
+   - Make note of the VPC ID for later reference.
 
-Step 3: Create an Internet Gateway and Attach to Your VPC
-1. In the navigation pane, choose 'Internet Gateways', 'Create internet gateway'.
-2. In the 'Create Internet Gateway' dialog box, add a name and choose 'Yes, Create'.
-3. Select the Internet Gateway you created, choose 'Actions', 'Attach to VPC'.
-4. In the 'Attach to VPC' dialog box, select your VPC and choose 'Yes, Attach'.
+3. Create a Subnet:
+   - In the VPC dashboard, go to "Subnets" and click on "Create subnet".
+   - Choose your VPC from the dropdown.
+   - Specify a name, select the availability zone, and provide a CIDR block.
+   - Click "Create subnet".
+   - Make note of the Subnet ID.
 
-Step 4: Configure Route Table
-1. In the navigation pane, choose 'Route Tables'.
-2. Select the route table associated with your VPC.
-3. On the 'Routes' tab, choose 'Edit', 'Add another route'.
-4. In the 'Destination' box, enter 0.0.0.0/0.
-5. In the 'Target' list, choose the ID of your Internet Gateway, and choose 'Save'.
+4. Create an Internet Gateway (IGW):
+   - In the VPC dashboard, go to "Internet Gateways".
+   - Click on "Create internet gateway" and attach it to your VPC.
+   - Make note of the Internet Gateway ID.
 
-Step 5: Create a Security Group
-1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-2. In the navigation pane, choose 'Security Groups' under 'Network & Security', 'Create security group'.
-3. Configure the security group by adding a name, description, selecting your VPC, and setting up your inbound and outbound rules.
+5. Update Route Table:
+   - Go to the "Route Tables" in the VPC dashboard.
+   - Select the route table associated with your VPC.
+   - Edit the routes and add a route to the internet gateway.
+   - This allows traffic from your VPC to the internet.
 
-Step 6: Launch an EC2 Instance
-1. In the navigation pane, choose 'Instances', 'Launch instances'.
-2. In the 'Choose an Amazon Machine Image (AMI)' page, select a Linux AMI.
-3. In the 'Choose an Instance Type' page, select an instance type, and choose 'Next: Configure Instance Details'.
-4. In the 'Configure Instance Details' page, select your VPC and subnet.
-5. Choose 'Next: Add Storage', and then 'Next: Add Tags', and then 'Next: Configure Security Group'.
-6. In the 'Configure Security Group' page, select the security group you created and choose 'Review and Launch'.
-7. In the 'Review Instance Launch' page, check your settings, and choose 'Launch'.
-8. In the 'Select an existing key pair or create a new key pair' dialog box, select an existing key pair or create a new one, check the acknowledgment box, and then choose 'Launch Instances'.
+6. Create a Security Group:
+   - Go to the EC2 dashboard and navigate to "Security Groups".
+   - Click on "Create security group".
+   - Provide a name and description for your security group.
+   - Add inbound rules to allow SSH (port 22) and any other necessary ports.
+   - Add outbound rules as needed.
+   - Make note of the Security Group ID.
+
+7. Launch an EC2 Instance:
+   - In the EC2 dashboard, click on "Launch Instance".
+   - Choose an Amazon Machine Image (AMI), preferably a Linux AMI.
+   - Select the instance type, configure instance details, such as subnet and security group.
+   - Add storage, tags, and configure any advanced settings if needed.
+   - Review and launch the instance.
+   - Create a new key pair or choose an existing one to connect to your instance via SSH.
+   - Launch the instance.
+
+8. Access the EC2 Instance:
+   - Once the instance is running, note its public IP or DNS.
+   - Use SSH to connect to the instance using the key pair.
+   - `ssh -i your_key.pem ec2-user@your_instance_public_ip`
+
+9. Verify Connectivity:
+   - After connecting to the instance, verify internet connectivity.
+   - Run commands like `ping`, `curl`, or `wget` to external resources to ensure connectivity.
+
+10. Additional Configuration (Optional):
+    - Configure the instance according to your requirements, install software, set up services, etc.
+
+These steps should guide you through setting up an EC2 instance with the required networking components and security groups in AWS.
