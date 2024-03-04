@@ -1,46 +1,61 @@
-// Demonstate and configure and launch an ec2 windows instance with VPC,  subnet, Internet Gateway, Security group 
+2.Demonstrate and configure and launch an EC2 windows instance with VPC , subnet , internet gateway, security group 
 
-Sure, here are the detailed steps to configure and launch an EC2 Windows instance with VPC, subnet, Internet Gateway, and Security group, and then access it using RDP:
+Certainly! Here are the step-by-step instructions to configure and launch an EC2 Windows instance with VPC, subnet, internet gateway, and security group:
 
-Step 1: Delete Default VPC
-- Navigate to the AWS console.
-- Go to the VPC service.
-- Remove the default VPC.
+1. Sign in to AWS Console:
+   - Go to the AWS Management Console at https://aws.amazon.com/console/.
+   - Sign in using your credentials.
 
-Step 2: Create Custom VPC
-- Access the VPC service.
-- Proceed to Your VPCs.
-- Create a new VPC named “MyVPC” with CIDR block 10.100.0.0/16.
+2. Create a VPC:
+   - Navigate to the VPC dashboard.
+   - Click on "Create VPC" and follow the wizard.
+   - Provide a name and CIDR block for your VPC.
+   - Make note of the VPC ID for later reference.
 
-Step 3: Set up Internet Gateway
-- Create a new Internet gateway (MyVPC-IGW) in the Internet Gateways section.
+3. Create a Subnet:
+   - In the VPC dashboard, go to "Subnets" and click on "Create subnet".
+   - Choose your VPC from the dropdown.
+   - Specify a name, select the availability zone, and provide a CIDR block.
+   - Click "Create subnet".
+   - Make note of the Subnet ID.
 
-Step 4: Attach Internet Gateway to Custom VPC
-- Attach the created internet gateway to your “MyVPC.”
+4. Create an Internet Gateway (IGW):
+   - In the VPC dashboard, go to "Internet Gateways".
+   - Click on "Create internet gateway" and attach it to your VPC.
+   - Make note of the Internet Gateway ID.
 
-Step 5: Create Subnet
-- In the VPC service, go to Subnets.
-- Create a new subnet within your VPC.
+5. Update Route Table:
+   - Go to the "Route Tables" in the VPC dashboard.
+   - Select the route table associated with your VPC.
+   - Edit the routes and add a route to the internet gateway.
+   - This allows traffic from your VPC to the internet.
 
-Step 6: Create Security Group
-- In the VPC service, go to Security Groups.
-- Create a new security group within your VPC.
-- Set up rules to allow inbound and outbound traffic.
+6. Create a Security Group:
+   - Go to the EC2 dashboard and navigate to "Security Groups".
+   - Click on "Create security group".
+   - Provide a name and description for your security group.
+   - Add inbound rules to allow RDP (Remote Desktop Protocol, port 3389) and any other necessary ports.
+   - Add outbound rules as needed.
+   - Make note of the Security Group ID.
 
-Step 7: Launch EC2 Instance
-- Go to the EC2 service.
-- Click on Launch Instance.
-- Select the Windows AMI.
-- Choose the instance type.
-- Configure instance details, making sure to select your custom VPC and subnet.
-- Add storage as needed.
-- Select your security group.
-- Review and launch the instance².
+7. Launch an EC2 Instance:
+   - In the EC2 dashboard, click on "Launch Instance".
+   - Choose an Amazon Machine Image (AMI), preferably a Windows AMI.
+   - Select the instance type, configure instance details, such as subnet and security group.
+   - Add storage, tags, and configure any advanced settings if needed.
+   - Review and launch the instance.
+   - Create a new key pair or choose an existing one if needed.
+   - Launch the instance.
 
-Step 8: Connect to EC2 Instance Using RDP
-- Install an RDP client on your local machine¹.
-- In the EC2 service, select your instance and click on Connect.
-- Download the remote desktop file.
-- Get the password by browsing your key pair and clicking on Decrypt Password¹.
-- Open the downloaded remote desktop file, enter the password, and press Continue¹.
+8. Access the EC2 Instance:
+   - Once the instance is running, note its public IP or DNS.
+   - Use a Remote Desktop Client to connect to the instance using the provided credentials.
+   - Use the private key to decrypt the administrator password if needed.
 
+9. Verify Connectivity:
+   - After connecting to the instance, verify internet connectivity by browsing the web or accessing external resources.
+
+10. Additional Configuration (Optional):
+    - Configure the instance according to your requirements, install software, set up services, etc.
+
+These steps should guide you through setting up an EC2 instance with Windows operating system along with the necessary networking components and security groups in AWS.
