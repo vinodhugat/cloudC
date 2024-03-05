@@ -1,0 +1,39 @@
+Auto scaling
+
+Server -> ec2 -> instance
+Leftside panel -> launch template -> click
+Click create launch template
+Enter templatename -> my-2-template
+Template version description -> any
+Provide auto scaling guidence -> enable
+Under application and os images --> select quick start : amazon linux aws
+Instance type : t2.micro
+Key pair : linux2 keypair (any linux keypair)
+Network settings -> subnet : don’t include in 
+Security group : any sg(ssh and http must)
+Click create launch template
+EC2 dashboard 
+Left side : auto scaling -> auroscaling group
+Click on create auto scaling group
+Enter auto scaling group name - > asgo1
+Launch template: select my-template
+Next
+Network - vpc - select existing one
+Availability zone - select two zones(minimum)
+Next
+Configure advance options -> no load balance -> health check up grace period 300
+Next
+Group size -> desired capacity 2 -> min : 1 -> max: 3
+Scaling : target tracking scaling policy --> policy name: target tracking policy --> metric type : avg CPU utilization --> target value 50 or 90
+Next
+Add notification -> no change
+Next
+Create auto scale group (down)
+
+Select auto scale group (down)
+Select autoscale group
+In down panel select Instance Management
+Two new (desired capacity) instance are launched inside VPC
+If one is stopped -> one will keep running(because min capacity is 1)
+If both are stopped new instance will be launched--> because capacity is one
+If load on both instances increases to 90% CPU utilization if the instance then the third instance will be launched to take up the extra load.
