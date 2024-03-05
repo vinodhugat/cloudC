@@ -1,5 +1,14 @@
-<?php
+execute this this by following
+sudo -i
+yum install php php-mysqlnd
+cd /var/www/html
+dir  -> to see 
+nano index.php
+(past following php code using ctrl+shipt+c & ctrl+shipt+v)
+ctrl+s  --> save;  ctrl+x -->  exit
+service httpd start
 
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
