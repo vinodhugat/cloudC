@@ -1,0 +1,13 @@
+//this is to execute the sql in terminal
+sudo -i
+yum install httpd
+service httpd start
+yum install -y https://dev.mysql.com/get/mysql80-community-release-el9-5.noarch.rpm
+yum install mysql
+yum install mysql-server
+mysql -u admin -h (endpont) -P 3306 -p
+password
+mysql> show database;
+mysql> use database_name;
+mysql> select * from table_name;
+
