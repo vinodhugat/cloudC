@@ -1,0 +1,53 @@
+Crete security group (Under EC2 > network and security)
+Enter basic  parameters
+Add inbound rules -> all anywhere  and All TCP, HTTP, HTTPS, MySql/Aurora, MSSQL, Oracle-RDS
+Add  outbound  rules -> All Trafic anywhere
+Create Create security group 
+
+Subnet group (services  > RDS)
+Click on create DB subnet group
+Enter name -->  Enter description --> Enter VPC (as in instance)
+Add subnet ---> atleast 2  , one subnet in each zone
+Click on create
+
+Parameter group(RDS)
+Family - mysql 8.0
+Type DB parameter group
+Click on create parameter group
+Group name -> Enter name
+Description -> compulsorily 
+Click on  create
+Click on  group name 
+Edit
+Following parameters
+Search char
+Select - client , connection, database, server, result
+Save changes
+
+Databases (RDS)
+Method - Standard
+Engine - MySql
+Version - 8.0.35
+Template: free tire
+Settings - DB instance identifier, master user name, master password
+Instance configuration - > default
+Storage : general purpose SSD 20
+Network  type: ipv4
+Connectivity -> don’t connect to an EC2  
+VPC same as
+Public access yes
+VPC security group -> Choose existing
+Availability zone->  choose any 
+Databse authentication -> password authentication
+Monitotring no change
+Additonal configuration click
+Initial db name  - studdb
+Parameter group default
+Option group default
+Enable automated backup
+Enable Encryption
+Maintanance enable autominor
+Maintanance window : no preference 
+Deletion protection- uncheck
+Click  on create db
+
