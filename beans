@@ -1,0 +1,12 @@
+create IAM user -> role-> create role-> select usecase-> EC2 -> create
+addprmission-> docker, webtier, workertier(small)
+create rolename
+AWS beanstalk -> goto  application > name > description > create
+click on created application > actions
+create environment >  platform > java > 
+check upload file>  upload jar
+
+service access > role > next> select vpc > public ip (activate)
+instance subnets > next > next > manage platform > manage update deactivate
+submit
+
