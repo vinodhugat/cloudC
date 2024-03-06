@@ -1,11 +1,1 @@
-Sure, here are the notes for each of the concepts:
 
-1. **EC2 Linux Instance**: An EC2 Linux instance is a virtual server in the AWS Cloud. With Amazon EC2, you can set up and configure the operating system and applications that run on your instance⁴. It allows you to launch, connect to, and use a Linux instance⁴. 
-
-2. **VPC (Virtual Private Cloud)**: VPC stands for Virtual Private Cloud. Amazon VPC provides a logically isolated area of the AWS cloud where you can launch AWS resources in a virtual network that you define¹⁹. You have complete control over your virtual networking environment, including a selection of your IP address range, the creation of subnets, and configuration of route tables and network gateways¹⁹.
-
-3. **Subnet**: A subnet is a smaller network, also referred to as a sub network. An IP network is logically divided into several smaller network components by subnets¹¹. Subnets are used to divide a large network into a collection of smaller, interconnected networks, which helps to minimize traffic¹³.
-
-4. **Internet Gateway**: An Internet Gateway is a VPC component that allows the instance in the VPC to communicate with the internet¹⁷. It provides a target to route internet routable traffic and performs NAT translation¹⁷. It supports IPv4 and IPv6 traffic¹⁷.
-
-5. **Security Group**: A security group in AWS functions as a virtual firewall, managing the inbound and outbound traffic for one or more Amazon EC2 instances or other AWS services within a VPC¹. It controls incoming and outgoing data packets from/to any network¹⁴. Security groups are listed in Discretionary Access Control Lists (DACLs) that define permissions on resources and objects²..
