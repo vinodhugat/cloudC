@@ -1,0 +1,16 @@
+Services --> IAM  --> user --> Create User
+Enter user name
+Enable user Access to AWS Mngt Console
+I want to create an IAM user
+Custom password
+Uncheck user must create a new password on login
+Next
+Attach Policies Directly(Permission options)
+Permission policies : check - Administrator access - Amazon S3 full access
+Next
+Create user
+Bottom download CSV file -> click
+Open csv file and copy console link from file
+Paste the link in new window
+Login to IAM  user with name and  password
+Create S3 bucket and html file inside it
