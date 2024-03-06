@@ -1,0 +1,11 @@
+Run a linux instance
+Open filezilla
+Go to file --> site manager --> mysite --> new site
+In right panal --> protocol : SFTP - SSH file transfer --> host - 1pv4 address or DNS hostname --> port : 22 --> login type: keyfile --> user: ec2-user --> key file : browse key pair of instance
+Click connect
+Filezilla --> left side --> local site : desktop (can drag and drop)
+Filezilla --> right side --> remotesite (/site/home/ec2-user)
+Connect the instance through putty
+Login : ec2-user 
+Type $ls you can see the new file being transferred 
+If file not transferred give permission as $chmod 777 html (in html directory i.e, /var/www/html)
